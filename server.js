@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 app.set('trust proxy', 1);
 app.use(cors({
-    origin: ['https://moscodedev.github.io/jobmate_frontend', 'https://moscodedev.github.io' ,'http://localhost:5173'],
+    origin: ['https://moscodedev.github.io/jobmate_frontend', 'https://moscodedev.github.io','http://localhost:5173'],
     credentials: true,
 }));
 
@@ -28,7 +28,7 @@ app.use(session({
     }),
     cookie: {
         secure: false,
-        sameSite: 'lax',
+        sameSite: 'none',
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 
     }
